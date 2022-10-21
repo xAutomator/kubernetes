@@ -30,6 +30,17 @@ You can use any of the following methods to choose where Kubernetes schedules sp
 
 ### Node Afinity
 
+Node <b>Afinity<b> Operators
+- In
+- NotIn
+- Exists
+- DoesNotExist 
+- Gt
+- Lt
+
+Node <b>ANTI-Afinity<b> Operators
+- NotIn
+- DoesNotExist
 
 ### Resource Limits
 
