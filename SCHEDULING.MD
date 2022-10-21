@@ -10,7 +10,7 @@ Learning Checklist
 - [ ] Resource Limits
   -  [ ] Definitions and notes
   -  [ ] Examples
-- [ ] (Daemon sets vs deployments vs jobs)[Daemon sets vs deployments vs jobs]
+- [ ] [Daemon sets vs deployments vs jobs](Daemon sets vs deployments vs jobs)
   -  [ ] Definitions and notes
   -  [ ] Examples
 
