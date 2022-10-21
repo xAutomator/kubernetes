@@ -107,3 +107,17 @@ spec:
         claimName: myclaim
 ```
 
+<b> StorageClass Example </b>
+
+```yaml
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: qnap-data
+provisioner: qnap/filestation
+parameters:
+  shareName: DockerData1
+reclaimPolicy: Delete
+allowVolumeExpansion: true
+volumeBindingMode: Immediate
+```

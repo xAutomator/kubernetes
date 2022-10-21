@@ -18,6 +18,7 @@ spec:
       name: log-volume
 
   volumes:
+
   - name: log-volume
     hostPath:
       # directory location on host

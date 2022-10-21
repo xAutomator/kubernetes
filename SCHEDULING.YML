@@ -1,0 +1,26 @@
+# Kubernetes Scheduling Cheatsheet
+
+Learning Checklist
+- [x] Taints and Tolerations
+  -  [ ] Definitions and notes
+  -  [ ] Examples
+- [ ] Node Afinity
+  -  [ ] Definitions and notes
+  -  [ ] Examples
+- [ ] Resource Limits
+  -  [ ] Definitions and notes
+  -  [ ] Examples
+- [ ] (Daemon sets vs deployments vs jobs)[Daemon sets vs deployments vs jobs]
+  -  [ ] Definitions and notes
+  -  [ ] Examples
+
+### Taints and Tolerations
+
+
+### Node Afinity
+
+
+### Resource Limits
+
+
+### Daemon sets vs deployments vs jobs
