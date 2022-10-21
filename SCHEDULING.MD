@@ -1,10 +1,10 @@
 # Kubernetes Scheduling Cheatsheet
 
 Learning Checklist
-- [x] Taints and Tolerations
+- [x] [Taints and Tolerations](#tains-and-tolerations)
   -  [ ] Definitions and notes
   -  [ ] Examples
-- [ ] Node Afinity
+- [ ] [Node Afinity](#node-afinity)
   -  [ ] Definitions and notes
   -  [ ] Examples
 - [ ] Resource Limits
