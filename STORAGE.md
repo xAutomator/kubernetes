@@ -1,15 +1,33 @@
 # Kubernetes Storage Cheatsheet
 
 
-Quick Links
-- [persistant-volume-claim-examples](#persistant-volume-claim-examples)
+Learning Checklist
+- [ ] Persistent volumes
+  -  [ ] Definitions and notes 
+  -  [x] Examples 
+- [ ] Persistent Volume Claim
+  -  [ ] Definitions and notes 
+  -  [ ] Examples 
+- [ ] Storage Class
+  -  [ ] Definitions and notes 
+  -  [ ] Examples 
+
+
+
+<b>Quick Links to examples</b>
+- 
+- [Persistent Volume Examples](#persistant-volume-examples)
+- [Persistent volume claim examples](#persistant-volume-claim-examples)
 -
 -
 
 
-### Persistant Volumes Examples
+### Persistent Volume Examples
+
+
 
 <b>PersistentVolume Example</b>
+
 ```yaml
 kind: PersistentVolume
 apiVersion: v1
@@ -48,7 +66,7 @@ spec:
 
 ```
 
-### Persistant Volume Claim Examples
+### Persistent Volume Claim Examples
 <b>PersistentVolume Claim Example</b>
 ```yaml
 kind: PersistentVolumeClaim
