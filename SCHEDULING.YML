@@ -19,7 +19,7 @@ Learning Checklist
 
 
 You can use any of the following methods to choose where Kubernetes schedules specific Pods:
-	• (nodeSelector)[www.google.com] field matching against node labels
+	• [nodeSelector](www.google.com) field matching against node label
 	• Affinity and anti-affinity
 	• nodeName field
 Pod topology spread constraints
