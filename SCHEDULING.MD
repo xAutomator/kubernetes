@@ -123,6 +123,35 @@ spec:
                 - blue
 
 ```
+
+Deploy a deployment to any node that has the "node-role.kubernetes.io/control-plane" label
+
+```yaml
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: red
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      color: red
+  template:
+    metadata:
+      labels:
+        color: red
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: node-role.kubernetes.io/control-plane
+                operator: Exists
+```
 ### Resource Limits
 
 
