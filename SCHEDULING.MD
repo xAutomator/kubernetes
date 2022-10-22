@@ -4,7 +4,7 @@ Learning Checklist
 - [x] [Taints and Tolerations](#tains-and-tolerations)
   -  [ ] Definitions and notes
   -  [ ] Examples
-- [ ] [Node Afinity](#node-afinity)
+- [ ] [Node Afinity](#node-and-pod-affinity)
   -  [ ] Definitions and notes
   -  [ ] Examples
 - [ ] Resource Limits
@@ -33,7 +33,7 @@ To Label a node use the following command
 ### Taints and Tolerations
 
 
-### Node Afinity
+### Node And Pod Affinity
 
 Node <b>Afinity</b> Operators
 - In
@@ -54,6 +54,56 @@ There are four node afinity execution rules:
 - requiredDuringSchedulingrequiredDuringExecution - Future state
 - preferredDuringSchedulingrequiredDuringExecution - Future state
 
+The affinity feature consists of two types of affinity:
+- Node affinity functions like the nodeSelector field but is more expressive and allows you to specify soft rules.
+- Inter-pod affinity/anti-affinity allows you to constrain Pods against labels on other Pods.
+
+Node affinity weight
+You can specify a weight between 1 and 100 for each instance of the preferredDuringSchedulingIgnoredDuringExecution affinity type. When the scheduler finds nodes that meet all the other scheduling requirements of the Pod, the scheduler iterates through every preferred rule that the node satisfies and adds the value of the weight for that expression to a sum.
+
+The final sum is added to the score of other priority functions for the node. Nodes with the highest total score are prioritized when the scheduler makes a scheduling decision for the Pod.
+
+For example, consider the following Pod spec:
+
+
+
+<b>Node Affinity
+
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: with-affinity-anti-affinity
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/os
+            operator: In
+            values:
+            - linux
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: label-1
+            operator: In
+            values:
+            - key-1
+      - weight: 50
+        preference:
+          matchExpressions:
+          - key: label-2
+            operator: In
+            values:
+            - key-2
+  containers:
+  - name: with-node-affinity
+    image: registry.k8s.io/pause:2.0
+```
 
 
 ###### Examples
@@ -156,3 +206,5 @@ spec:
 
 
 ### Daemon sets vs deployments vs jobs
+
+Deployment have different update strategis
